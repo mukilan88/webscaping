@@ -16,7 +16,9 @@ for page in range(0,1):
         try:
             name = i.find('a').get_text()
             print(name)
-                        
-            f.write("{}".format(name).replace(",","|")+ ",{}".format(price)+ ",{}".format(rating).replace(",", " ")+ "\n")
+            name_list = (name)
+            f.write(name_list)
+            f.write("\n")    
+            # f.write("{}".format(name).replace(",","|")+ ",{}".format(price)+ ",{}".format(rating).replace(",", " ")+ "\n")
         except: AttributeError
 f.close()
