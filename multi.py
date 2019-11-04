@@ -5,13 +5,16 @@ from bs4 import BeautifulSoup
 # creating a file name
 file = "Details.csv"
 f = open(file, "w") #open the file
-Headers = "Name\n" #heading part
+Headers = "Name,Location\n" #heading part
 f.write(Headers) #inserting the heading
 
+range = [10, 20, 30]
 # loop for multi page open
-for page in range(0,1):
+
+for i in range:
+    print(i)
     # opening the url
-    url = "https://stackoverflow.com/users?page="+page+"&tab=reputation&filter=week".format(page)
+    url = "https://stackoverflow.com/users?page=()&tab=reputation&filter=week".format(i)
     html = urlopen(url)
     # scraping using bs4
     soup = BeautifulSoup(html,"html.parser")
@@ -23,9 +26,13 @@ for page in range(0,1):
     for i in Title:
         try:
             name = i.find('a').get_text()
+            location = i.find('span', class_ ='user-location')
             print(name)
+            # print(locatin)
             name_list = (name)
+            # location_list = (location)
             f.write(name_list)
+            # f.write(location_list)
             f.write("\n")    
         except: AttributeError
 f.close()
