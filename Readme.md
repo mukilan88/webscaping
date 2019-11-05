@@ -11,6 +11,8 @@ We need to download the BeautifulSoup, requests, csv
     pip install BeautifulSoup
     pip install requests
     pip install csv
+    pip install lxml
+    pip install urllib3
 
 # Running the tests
 
