@@ -10,7 +10,7 @@ html = requests.get(url).text
     # scraping using bs4
 soup = BeautifulSoup(html,"html.parser")
     # finding the name of the user inside the class file
-for name in soup.select_one("#user-browser"):
+for name in soup.find_all(class_='grid-layout--cell user-info  user-hover'):
     try:
         name_title = name.find(class_='user-details').getText()
         print(name_title)

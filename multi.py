@@ -8,12 +8,13 @@ f = open(file, "w") #open the file
 Headers = "Name,Location\n" #heading part
 f.write(Headers) #inserting the heading
 
-range = [10, 20, 30]
+# range = [0 to 2]
 # loop for multi page open
 
-for i in range:
+for i in range(0,3):
     print(i)
     # opening the url
+    # url = "https://stackoverflow.com/users?page="+format(i)+"&tab=reputation&filter=week"
     url = "https://stackoverflow.com/users?page=()&tab=reputation&filter=week".format(i)
     html = urlopen(url)
     # scraping using bs4
