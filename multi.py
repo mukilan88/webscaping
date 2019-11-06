@@ -19,6 +19,7 @@ for i in range(0,3):
     html = urlopen(url)
     # scraping using bs4
     soup = BeautifulSoup(html,"html.parser")
+    print(soup)
     # finding the name of the user inside the class file
     Title = soup.find_all("div", {"class":"user-details"})
     print(len(Title)) #total lenth of the user in the page

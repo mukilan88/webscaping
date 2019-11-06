@@ -6,14 +6,13 @@ keyword = input("Enter a Youtube Search Keyword:")
 
 # Get the page
 res = requests.get('https://www.youtube.com/results?search_query='+ keyword)
-
 # Get the Body with lxml parser
 bs = BeautifulSoup(res.text, 'lxml') #pip install lxml
-# print(bs.text)
+print(bs)
 
 # get all elements with class 
 ViewElements = bs.find_all('ul', class_='yt-lockup-meta-info')
-print(ViewElements.text)
+# print(ViewElements.text)
 totalview = 0
 for obj in ViewElements:
     lis = obj.findChildren()
